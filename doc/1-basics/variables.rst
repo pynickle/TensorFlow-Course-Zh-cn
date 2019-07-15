@@ -1,22 +1,14 @@
-Introduction to TensorFlow Variables: Creation, Initialization
+TensorFlow变量简介：创建，初始化
 --------------------------------------------------------------
 
-This tutorial deals with defining and initializing TensorFlow variables.
+本教程介绍如何定义和初始化TensorFlow变量。
 
-Introduction
+介绍
 ------------
 
-Defining ``variables`` is necessary because they hold the parameters.
-Without having parameters, training, updating, saving, restoring and any
-other operations cannot be performed. The defined variables in
-TensorFlow are just tensors with certain shapes and types. The tensors
-must be initialized with values to become valid. In this tutorial, we
-are going to explain how to ``define`` and ``initialize`` variables. The
-`source
-code <https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/variables>`__
-is available on the dedicated GitHub repository.
+定义 ``变量`` 是必要的，因为它们包含参数。如果没有参数，那么训练，更新，保存，恢复和任何其他操作都无法执行。TensorFlow中定义的变量只是具有特定形状和类型的张量。，所以我们必须使用值来初始化这些张量以使其有效。在本教程中，我们将解释如何 ``定义`` 和 ``初始化`` 变量。 `源代码 <https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/variables>`__ 可以在GitHub存储库中找到。
 
-Creating variables
+创建变量
 ------------------
 
 For a variable generation, the class of tf.Variable() will be used. When
