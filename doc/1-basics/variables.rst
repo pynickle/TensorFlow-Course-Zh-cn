@@ -34,29 +34,25 @@ TensorFlow变量简介：创建，初始化
     biases = tf.Variable(tf.zeros([3]), name="biases")
     custom_variable = tf.Variable(tf.zeros([3]), name="custom")
 
-    # Get all the variables' tensors and store them in a list.
+    # 获取所有变量的张量并存储在列表中
     all_variables_list = ops.get_collection(ops.GraphKeys.GLOBAL_VARIABLES)
     
 
-In the above script, ``ops.get_collection`` gets the list of all defined variables
-from the defined graph. The "name" key, define a specific name for each
-variable on the graph
+在上面的脚本中， ``ops.get_collection`` 从定义的图像中获取所有已定义变量的列表。"name"键，为图表上的每个变量定义了一个特定的名称。
 
-Initialization
+初始化
 --------------
 
-``Initializers`` of the variables must be run before all other
-operations in the model. For an analogy, we can consider the starter of
-the car. Instead of running an initializer, variables can be
-``restored`` too from saved models such as a checkpoint file. Variables
-can be initialized globally, specifically, or from other variables. We
-investigate different choices in the subsequent sections.
+必须在模型中的所有其他操作之前运行变量的``变量初始化器``。作为类比，我们可以考虑汽车的启动器。变量也可以从已保存的模型（例如检查文件）中“恢复”。变量可以全局，或特别地初始化或是从其他变量初始化。我们将在后续章节中研究不同的选择。
 
-Initializing Specific Variables
+初始化特定变量
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By using tf.variables\_initializer, we can explicitly command the
 TensorFlow to only initialize a certain variable. The script is as follows
+
+通过使用tf.variables \ _initializer，我们可以显式命令
+TensorFlow仅初始化一个确定变量。脚本如下：
 
 .. code:: python
      
