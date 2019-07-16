@@ -61,7 +61,7 @@
      # 定义一些语句吧！
      welcome = tf.constant('Welcome to TensorFlow world!')
     
-``tf.`` 会执行特点操作并输出 ``张量`` 。属性 ``name="some_name"`` 是为了得到更好的Tensorboard可视化效果而定义的，我们将在本教程的后面看到。
+``tf.`` 会执行特定操作并输出 ``张量`` 。属性 ``name="some_name"`` 是为了得到更好的Tensorboard可视化效果而定义的，我们将在本教程的后面看到。
 
 -------------------
 运行实验

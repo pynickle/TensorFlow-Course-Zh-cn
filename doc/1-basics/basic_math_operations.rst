@@ -104,5 +104,5 @@
    :scale: 30 %
    :align: center
 
-   **图一：** TensorFlow图像
+   **图1：** TensorFlow图像
 

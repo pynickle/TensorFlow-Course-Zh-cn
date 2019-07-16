@@ -6,7 +6,7 @@ TensorFlow变量简介：创建，初始化
 介绍
 ------------
 
-定义 ``变量`` 是必要的，因为它们包含参数。如果没有参数，那么训练，更新，保存，恢复和任何其他操作都无法执行。TensorFlow中定义的变量只是具有特定形状和类型的张量。，所以我们必须使用值来初始化这些张量以使其有效。在本教程中，我们将解释如何 ``定义`` 和 ``初始化`` 变量。 `源代码 <https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/variables>`__ 可以在GitHub存储库中找到。
+定义 ``变量`` 是必要的，因为它们包含参数。如果没有参数，那么训练，更新，保存，恢复和任何其他操作都无法执行。TensorFlow中定义的变量只是具有特定形状和类型的张量。所以我们必须使用值来初始化这些张量以使其有效。在本教程中，我们将解释如何 ``定义`` 和 ``初始化`` 变量。 `源代码 <https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/variables>`__ 可以在GitHub存储库中找到。
 
 创建变量
 ------------------
@@ -43,16 +43,13 @@ TensorFlow变量简介：创建，初始化
 初始化
 --------------
 
-必须在模型中的所有其他操作之前运行变量的``变量初始化器``。作为类比，我们可以考虑汽车的启动器。变量也可以从已保存的模型（例如检查文件）中“恢复”。变量可以全局，或特别地初始化或是从其他变量初始化。我们将在后续章节中研究不同的选择。
+必须在模型中的所有其他操作之前运行变量的``变量初始化器``。作为类比，我们可以考虑汽车的启动器。变量也可以从已保存的模型，例如检查文件中“恢复”。变量可以全局，或特别地初始化或是从其他变量初始化。我们将在后续章节中研究不同的选择。
 
 初始化特定变量
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By using tf.variables\_initializer, we can explicitly command the
 TensorFlow to only initialize a certain variable. The script is as follows
-
-通过使用tf.variables \ _initializer，我们可以显式命令
-TensorFlow仅初始化一个确定变量。脚本如下：
 
 .. code:: python
      
