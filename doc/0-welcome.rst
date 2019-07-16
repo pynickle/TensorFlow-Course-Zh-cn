@@ -38,9 +38,7 @@
        # 将所有元素存储在FLAG结构中
        FLAGS = tf.app.flags.FLAGS
 
-``os.path.dirname(os.path.abspath(__file__))`` 用来获取当前python文件的目录名。``tf.app.flags.FLAGS`` points to all defined flags using the ``FLAGS`` indicator. From now on the flags can be called using ``FLAGS.flag_name``.
-
-使用 ``FLAGS`` 指示符指向所有已定义的flags。从现在起，你可以使用 ``FLAGS.flag_name`` 调用flags。
+``os.path.dirname(os.path.abspath(__file__))`` 用来获取当前python文件的目录名。``tf.app.flags.FLAGS`` 指向所有使用 ``FLAGS`` 指示符定义的flags。从现在起，你可以使用 ``FLAGS.flag_name`` 调用flags。
 
 为方便起见，仅仅使用 ``绝对路径`` 是很有用的。通过使用以下脚本，用户会被提示使用绝对路径表示 ``log_dir`` 目录。
 
@@ -63,7 +61,7 @@
      # 定义一些语句吧！
      welcome = tf.constant('Welcome to TensorFlow world!')
     
-``tf.`` 会执行特点操作并输出 ``Tensor`` 。属性 ``name="some_name"`` 是为了得到更好的Tensorboard可视化效果而定义的，我们将在本教程的后面看到。
+``tf.`` 会执行特点操作并输出 ``张量`` 。属性 ``name="some_name"`` 是为了得到更好的Tensorboard可视化效果而定义的，我们将在本教程的后面看到。
 
 -------------------
 运行实验

@@ -11,15 +11,12 @@ TensorFlow变量简介：创建，初始化
 创建变量
 ------------------
 
-For a variable generation, the class of tf.Variable() will be used. When
-we define a variable, we basically pass a ``tensor`` and its ``value``
-to the graph. Basically, the following will happen:
+对于一个变量的生成，我们将使用 tf.Variable() 类。当我们定义一个变量时，我们至少将一个 ``张量`` 和它的 ``值`` 传递给图像。正常情况下会发生以下情况：
 
-    -  A ``variable`` tensor that holds a value will be pass to the
-       graph.
-    -  By using tf.assign, an initializer set initial variable value.
+    - 包含一个值的 ``变量`` 张量将传递给图像。
+    - 通过使用tf.assign，变量初始化器设置初始值。
 
-Some arbitrary variables can be defined as follows:
+一些变量可以像如下定义：
 
 .. code:: python
 
@@ -28,10 +25,10 @@ Some arbitrary variables can be defined as follows:
     from tensorflow.python.framework import ops
 
     #######################################
-    ######## Defining Variables ###########
+    ############# 定义变量 ################
     #######################################
 
-    # Create three variables with some default values.
+    # 使用默认值创建3个变量
     weights = tf.Variable(tf.random_normal([2, 3], stddev=0.1),
                           name="weights")
     biases = tf.Variable(tf.zeros([3]), name="biases")
