@@ -48,37 +48,33 @@ TensorFlow变量简介：创建，初始化
 初始化特定变量
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By using tf.variables\_initializer, we can explicitly command the
-TensorFlow to only initialize a certain variable. The script is as follows
+通过使用tf.variables \\ _initializer，我们可以显式命令TensorFlow仅初始化某个特定的变量。 脚本如下
 
 .. code:: python
      
-    # "variable_list_custom" is the list of variables that we want to initialize.
+    # “variable_list_custom”是我们要初始化的变量列表。
     variable_list_custom = [weights, custom_variable]
 
-    # The initializer
+    # 初始化器
     init_custom_op = tf.variables_initializer(var_list=variable_list_custom)
 
-Noted that custom initialization does not mean that we don't need to
-initialize other variables! All variables that some operations will be
-done upon them over the graph, must be initialized or restored from
-saved variables. This only allows us to realize how we can initialize
-specific variables by hand.
+注意到自定义初始化并不意味着我们不需要初始化其它变量！所有可以根据图表来完成计算的变量都必须初始化或从已保存的变量中恢复。这只允许我们去手动初始化特定变量。
 
-Global variable initialization
+全局变量初始化
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+你可以使用 tf.global \\ _variables \\ _initializer() 一次初始化所有变量。注意的是，你必须在构建模型后运行此操作。脚本如下：
 All variables can be initialized at once using the
 tf.global\_variables\_initializer(). This op must be run after the model constructed. 
 The script is as below:
 
 .. code:: python
      
-    # Method-1
-    # Add an op to initialize the variables.
+    # 方法-1
+    # 添加一个op来初始化变量
     init_all_op = tf.global_variables_initializer()
 
-    # Method-2
+    # 方法-2
     init_all_op = tf.variables_initializer(var_list=all_variables_list)
 
 Both the above methods are identical. We only provide the second one to

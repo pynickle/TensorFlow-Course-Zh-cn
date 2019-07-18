@@ -6,8 +6,7 @@
 
 本节中的教程只是进入TensorFlow世界的一个开始。
 
-我们使用Tensorboard来显示结果。TensorBoard是TensorFlow提供的可视化工具。使用谷歌的话说：“你将使用TensorFlow进行计算 - 就像训练一个庞大的深度神经网络一样 - 这可能是复杂而混乱的。为了更容易理解，调试和优化TensorFlow程序，我们提供了一套名为TensorBoard的可视化工具。”本教程中使用了一个简单的Tensorboard实现。
-
+我们使用Tensorboard来将结果可视化。TensorBoard是TensorFlow提供的图像可视化工具。使用谷歌的话说：“您可以使用TensorFlow进行像训练一个大规模的深度神经网络一样复杂而混乱的计算。为了更容易理解，调试和优化TensorFlow程序，我们提供了一套名为TensorBoard的可视化工具。在本教程中包含了一个简单的Tensorboard的安装及启用。
 
 **注意：***
 
