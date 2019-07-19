@@ -1,39 +1,38 @@
 ==================================
 
-
 ==================================
 
-'
-/
-h
-o
-m
 
 
 
-e
 
-/
 
-u
 
-s
+
+
+
+
+
+
+
+
+
 
 ------------------------
-e
+
 ------------------------
 
-r
+
  
-n
-a
-m
+
+
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-e
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-/
+
 
 .. code:: bash
 
@@ -43,12 +42,12 @@ e
 The second line is for ``python3`` installation.
 
 ~~~~~~~~~~~~~~~~~~~
-l
+
 ~~~~~~~~~~~~~~~~~~~
 
-o
 
-g
+
+
 
 .. code:: bash
 
@@ -59,51 +58,51 @@ For solving that error you may need to purge all NVIDIA drivers and install or u
 
     
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-s
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-'
 
-开
-幕
-式
+
+
+
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-一
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-些
+
 
 .. code:: bash
 
     sudo mkdir ~/virtualenvs
 
-语
+
 
 .. code:: bash
 
     sudo virtualenv --system-site-packages ~/virtualenvs/tensorflow
 
-句
 
-可
+
+
 
 .. code:: bash
 
     source ~/virtualenvs/tensorflow/bin/activate
 
-以
 
-被
 
-T
+
+
+
 
 .. code:: bash
 
     echo 'alias tensorflow="source $HOME/virtualenvs/tensorflow/bin/activate" ' >> ~/.bash_aliases
     bash
 
-e
+
 
 .. code:: bash
 
@@ -111,16 +110,16 @@ e
     
 **check the ``~/.bash_aliases``**
 
-n
+
 
 .. code:: shell
 
     alias tensorflow="source $HO~/virtualenvs/tensorflow/bin/activate" 
     
 
-s
 
-o
+
+
  
 .. code:: shell
 
@@ -134,19 +133,19 @@ o
 Configuration of the Installation
 ---------------------------------
 
-r
+
 
 .. code:: bash
 
      git clone https://github.com/tensorflow/tensorflow 
 
-F
+
 
 .. code:: bash
 
     cd tensorflow  # cd to the cloned directory
 
-l
+
 
 .. code:: bash
 
@@ -181,20 +180,17 @@ l
     [Default is: "3.5,5.2"]: "5.2"
 
 
-o
-w
-定
-义
 
-：
+
+
+
+
 
 
      
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 
 
@@ -205,13 +201,11 @@ w
 
 ---------------------
 
-
 ---------------------
 
 
-
     
-#
+
 
 .. code:: bash
 
@@ -229,16 +223,15 @@ The ``bazel build`` command builds a script named build_pip_package. Running the
 
 -------------------------------
 
-
 -------------------------------
 
-定
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-义
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-一
+
 
 .. code:: bash
 
@@ -246,10 +239,10 @@ The ``bazel build`` command builds a script named build_pip_package. Running the
     
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-些
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-语
+
 
 .. code:: bash
     
@@ -263,7 +256,7 @@ The ``bazel build`` command builds a script named build_pip_package. Running the
 Validate the Installation
 --------------------------
 
-句
+
 
 .. code:: bash
 
@@ -274,21 +267,20 @@ Validate the Installation
     >> print(sess.run(hello))
 
 --------------------------
-吧
---------------------------
-
-！
-
-运
-行
-
-
 
 --------------------------
-使
+
+
+
+
+
+
+
 --------------------------
 
-验
+--------------------------
+
+
 
 
 

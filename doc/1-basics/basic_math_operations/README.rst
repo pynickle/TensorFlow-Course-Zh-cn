@@ -29,12 +29,12 @@
 
 .. code:: python
     
-# 保存日志文件的路径与此python文件所在的文件夹相同
+       # 保存日志文件的路径与此python文件所在的文件夹相同
        tf.app.flags.DEFINE_string(
        'log_dir', os.path.dirname(os.path.abspath(__file__)) + '/logs',
        'Directory where event logs are written to.')
 
-# 将所有元素存储在FLAG结构中
+       # 将所有元素存储在FLAG结构中
        FLAGS = tf.app.flags.FLAGS
 
 ``os.path.dirname(os.path.abspath(__file__))`` 用来获取当前python文件的目录名。``tf.app.flags.FLAGS`` 指向所有使用 ``FLAGS`` 指示符定义的flags。从现在起，你可以使用 ``FLAGS.flag_name`` 调用flags。
@@ -43,7 +43,7 @@
 
 .. code:: python
 
-# 输入绝对路径
+    # 输入绝对路径
     # os.path.expanduser用于将 '~' 符号转换为相应的路径指示符。
     #       示例： '~/logs' 等于 '/home/username/logs'
     if not os.path.isabs(os.path.expanduser(FLAGS.log_dir)):
@@ -76,7 +76,7 @@ The ``tf.`` operator performs the specific operation and the output will be a ``
 .. code:: python
 
     # 运行会话
-with tf.Session() as sess:
+    with tf.Session() as sess:
         writer = tf.summary.FileWriter(os.path.expanduser(FLAGS.log_dir), sess.graph)
         print("output: ", sess.run([a,b,x,y]))
 
@@ -97,12 +97,11 @@ Results
         [5.0, 10.0, 15.0, 0.5]
 
 
-如果我们使用 ``tensorboard --logdir=\"absolute/path/to/log_dir\"`` 来运行Tensorboard，我们在可视化 ``图像`` 时会得到如下结果：
+如果我们使用 ``tensorboard --logdir="absolute/path/to/log_dir"`` 来运行Tensorboard，我们在可视化 ``图像`` 时会得到如下结果：
 
-
-n
-:scale: 30 %
-:align: center
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/1-basics/basic_math_operations/graph-run.png
+   :scale: 30 %
+   :align: center
 
    **图1：** TensorFlow图像
 

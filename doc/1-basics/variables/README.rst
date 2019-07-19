@@ -32,7 +32,7 @@ TensorFlow变量简介：创建，初始化
 .. code:: python
 
      
-import tensorflow as tf
+    import tensorflow as tf
     from tensorflow.python.framework import ops
 
     #######################################
@@ -50,8 +50,7 @@ import tensorflow as tf
     
 
 在上面的脚本中， ``ops.get_collection`` 
-从定义的图像中获取所有已定义变量的列表。\"name\"键，为图表上的每个变量
-
+从定义的图像中获取所有已定义变量的列表。"name"键，为图表上的每个变量
 定义了一个特定的名称。
 
 初始化
@@ -67,13 +66,12 @@ import tensorflow as tf
 初始化特定变量
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-通过使用tf.variables\_initializer，我们可以显式命令
+By using tf.variables\_initializer, we can explicitly command the
 TensorFlow仅初始化某个特定的变量。 脚本如下
 
 .. code:: python
      
     # “variable_list_custom”是我们要初始化的变量列表。
-
     variable_list_custom = [weights, custom_variable]
 
     # 初始化器
@@ -89,7 +87,7 @@ TensorFlow仅初始化某个特定的变量。 脚本如下
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 你可以使用 
-tf.global \ _variables \ _initializer() 一次初始化所有变量。注意的是，你必须在构建模型后运行此操作。
+tf.global\_variables\_initializer(). This op must be run after the model constructed. 
 脚本如下：
 
 .. code:: python
@@ -105,51 +103,50 @@ tf.global \ _variables \ _initializer() 一次初始化所有变量。注意的�
 证明``tf.global_variables_initializer()``什么都不是
 但是当你在输入参数产生变量时，``tf.variables_initializer`` 
 
-F
+使用现有变量初始化变量
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-l
+
+values by taking the values using initialized\_value().
 
 
-
-w
 
 .. code:: python
 
-提
+
     WeightsNew = tf.Variable(weights.initialized_value(), name="WeightsNew")
 
-供
+
     init_WeightsNew_op = tf.variables_initializer(var_list=[WeightsNew])
 
-的
-图
 
-像
+
+
+
 -------------------
 
-可
-视
-化
 
-工
+
+
+
+
 
 .. code:: python
 
-with tf.Session() as sess:
-具
+    with tf.Session() as sess:
+
         sess.run(init_all_op)
         sess.run(init_custom_op)
         sess.run(init_WeightsNew_op)
 
-。
 
-使
+
+
 -------
 
-用
-谷
-歌
-的
-话
+
+
+
+
+
 
