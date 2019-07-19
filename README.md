@@ -4,8 +4,8 @@
 
 [📚TensorFlow-Course](https://github.com/machinelearningmindset/TensorFlow-Course)
 
-<img src="https://img.shields.io/badge/commit%20id-44fcda2-blue.svg" 
-     href="https://github.com/machinelearningmindset/TensorFlow-Course/commit/44fcda292f2cc8bb727847351f725cff0bea0601">
+<a href="https://github.com/machinelearningmindset/TensorFlow-Course/commit/44fcda292f2cc8bb727847351f725cff0bea0601">
+<img src="https://img.shields.io/badge/commit%20id-44fcda2-blue.svg"></a>
 
 ## Issues和Pull Requests
 
@@ -17,5 +17,7 @@
 📋翻译计划已移步至[**transifex**](https://www.transifex.com/pynickle/tensorflow-course)
 
 ⏳翻译进度已移步至[**progress**](progress.md)
+
+欢迎大家积极参与哦！💪
 
 
