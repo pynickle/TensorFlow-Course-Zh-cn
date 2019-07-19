@@ -106,47 +106,47 @@ tf.global\_variables\_initializer(). This op must be run after the model constru
 使用现有变量初始化变量
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+New variables can be initialized using other existing variables' initial
 values by taking the values using initialized\_value().
 
-
+Initialization using predefined variables' values
 
 .. code:: python
 
-
+    # Create another variable with the same value as 'weights'.
     WeightsNew = tf.Variable(weights.initialized_value(), name="WeightsNew")
 
-
+    # Now, the variable must be initialized.
     init_WeightsNew_op = tf.variables_initializer(var_list=[WeightsNew])
 
+As it can be seen from the above script, the ``WeightsNew`` variable is
+initialized with the values of the ``weights`` predefined value.
 
-
-
-
+Running the session
 -------------------
 
+All we did so far was to define the initializers' ops and put them on the
+graph. In order to truly initialize variables, the defined initializers'
+ops must be run in the session. The script is as follows:
 
-
-
-
-
+Running the session for initialization
 
 .. code:: python
 
     with tf.Session() as sess:
-
+        # Run the initializer operation.
         sess.run(init_all_op)
         sess.run(init_custom_op)
         sess.run(init_WeightsNew_op)
 
+Each of the initializers has been run separated using a session.
 
-
-
+Summary
 -------
 
-
-
-
-
-
+In this tutorial, we walked through the variable creation and
+initialization. The global, custom and inherited variable initialization
+have been investigated. In the future posts, we investigate how to save
+and restore the variables. Restoring a variable eliminate the necessity
+of its initialization.
 
