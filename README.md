@@ -15,4 +15,6 @@
 
 📋翻译计划已移步至[**transifex**](https://www.transifex.com/pynickle/tensorflow-course)
 
+⏳翻译进度已移步至[**progress**](progress.md)
+
 

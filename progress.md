@@ -1,0 +1,20 @@
+- 0-welcome
+  - [x] README.rst
+- 1-basics
+  - basic_math_operations
+    - [x] README.rst
+  - variables
+    - [ ] README.rst
+  - [x] readme.rst
+- 2-basics_in_machine_learning
+  - linear_regresstion
+    - [ ] README.rst
+  - logistic_regression
+    - [ ] README.rst
+- 3-neural-network
+  - autoencoder
+    - [ ] README.rst
+  - convolutiona_neural_network
+    - [ ] README.rst
+- installation
+  - [ ] README.rst
