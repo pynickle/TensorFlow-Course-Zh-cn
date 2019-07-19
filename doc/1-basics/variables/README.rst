@@ -6,14 +6,25 @@ TensorFlow变量简介：创建，初始化
 介绍
 ------------
 
-定义 ``变量`` 是必要的，因为它们包含参数。如果没有参数，那么训练，更新，保存，恢复和任何其他操作都无法执行。TensorFlow中定义的变量只是具有特定形状和类型的张量。所以我们必须使用值来初始化这些张量以使其有效。在本教程中，我们将解释如何 ``定义`` 和 ``初始化`` 变量。 `源代码 <https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/variables>`__ 可以在GitHub存储库中找到。
+定义 ``变量`` 是必要的，因为它们包含参数。
+如果没有参数，那么训练，更新，保存，恢复和任何
+其他操作都无法执行。TensorFlow中定义的变量
+只是具有特定形状和类型的张量。所以我们必须使用值来初始化这些张量
+以使其有效。在本教程中，我们
+将解释如何 ``定义`` 和 ``初始化`` 变量。 
+`源
+代码 <https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/variables>`__ 
+可以在GitHub存储库中找到。
 
 创建变量
 ------------------
 
-对于一个变量的生成，我们将使用 tf.Variable() 类。当我们定义一个变量时，我们至少将一个 ``张量`` 和它的 ``值`` 传递给图像。正常情况下会发生以下情况：
+对于一个变量的生成，我们将使用 tf.Variable() 类。当
+我们定义一个变量时，我们至少将一个 ``张量`` 和它的 ``值`` 
+传递给图像。正常情况下会发生以下情况：
 
-    - 包含一个值的 ``变量`` 张量将传递给图像。
+    - 包含一个值的 ``变量`` 张量将传递给
+      图像。
     - 通过使用tf.assign，变量初始化器设置初始值。
 
 一些变量可以像如下定义：
@@ -38,17 +49,25 @@ TensorFlow变量简介：创建，初始化
     all_variables_list = ops.get_collection(ops.GraphKeys.GLOBAL_VARIABLES)
     
 
-在上面的脚本中， ``ops.get_collection`` 从定义的图像中获取所有已定义变量的列表。"name"键，为图表上的每个变量定义了一个特定的名称。
+在上面的脚本中， ``ops.get_collection`` 
+从定义的图像中获取所有已定义变量的列表。"name"键，为图表上的每个变量
+定义了一个特定的名称。
 
 初始化
 --------------
 
-必须在模型中的所有其他操作之前运行变量的``变量初始化器``。作为类比，我们可以考虑汽车的启动器。变量也可以从已保存的模型，例如检查文件中“恢复”。变量可以全局，或特别地初始化或是从其他变量初始化。我们将在后续章节中研究不同的选择。
+必须在模型中的所有其他操作之前
+运行变量的``变量初始化器``。作为类比，我们可以考虑
+汽车的启动器。变量也可以从
+已保存的模型，例如检查文件中“恢复”。变量
+可以全局，或特别地初始化或是从其他变量初始化。我们
+将在后续章节中研究不同的选择。
 
 初始化特定变量
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-通过使用tf.variables \\ _initializer，我们可以显式命令TensorFlow仅初始化某个特定的变量。 脚本如下
+通过使用tf.variables \\ _initializer，我们可以显式命令
+TensorFlow仅初始化某个特定的变量。 脚本如下
 
 .. code:: python
      
@@ -58,15 +77,18 @@ TensorFlow变量简介：创建，初始化
     # 初始化器
     init_custom_op = tf.variables_initializer(var_list=variable_list_custom)
 
-注意到自定义初始化并不意味着我们不需要初始化其它变量！所有可以根据图表来完成计算的变量都必须初始化或从已保存的变量中恢复。这只允许我们去手动初始化特定变量。
+注意到自定义初始化并不意味着我们不需要
+初始化其它变量！所有可以根据图表来完成计算的变量
+都必须初始化或从已保存的变量中恢复。
+这只允许我们去手动初始化
+特定变量。
 
 全局变量初始化
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-你可以使用 tf.global \\ _variables \\ _initializer() 一次初始化所有变量。注意的是，你必须在构建模型后运行此操作。脚本如下：
-All variables can be initialized at once using the
-tf.global\_variables\_initializer(). This op must be run after the model constructed. 
-The script is as below:
+你可以使用 
+tf.global \\ _variables \\ _initializer() 一次初始化所有变量。注意的是，你必须在构建模型后运行此操作。
+脚本如下：
 
 .. code:: python
      
