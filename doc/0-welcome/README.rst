@@ -71,7 +71,7 @@ The ``tf.`` operator performs the specific operation and the output will be a ``
 .. code:: python
 
     # 运行会话
-    with tf.Session() as sess:
+with tf.Session() as sess:
         writer = tf.summary.FileWriter(os.path.expanduser(FLAGS.log_dir), sess.graph)
         print("output: ", sess.run(welcome))
 

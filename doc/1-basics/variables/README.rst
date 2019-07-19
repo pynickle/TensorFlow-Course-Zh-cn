@@ -32,7 +32,7 @@ TensorFlow变量简介：创建，初始化
 .. code:: python
 
      
-    import tensorflow as tf
+import tensorflow as tf
     from tensorflow.python.framework import ops
 
     #######################################
@@ -50,7 +50,8 @@ TensorFlow变量简介：创建，初始化
     
 
 在上面的脚本中， ``ops.get_collection`` 
-from the defined graph. The "name" key, define a specific name for each
+从定义的图像中获取所有已定义变量的列表。\"name\"键，为图表上的每个变量
+
 定义了一个特定的名称。
 
 初始化
@@ -66,12 +67,13 @@ from the defined graph. The "name" key, define a specific name for each
 初始化特定变量
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By using tf.variables\_initializer, we can explicitly command the
+通过使用tf.variables\_initializer，我们可以显式命令
 TensorFlow仅初始化某个特定的变量。 脚本如下
 
 .. code:: python
      
-    # "variable_list_custom" is the list of variables that we want to initialize.
+    # “variable_list_custom”是我们要初始化的变量列表。
+
     variable_list_custom = [weights, custom_variable]
 
     # 初始化器
@@ -87,7 +89,7 @@ TensorFlow仅初始化某个特定的变量。 脚本如下
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 你可以使用 
-tf.global\_variables\_initializer(). This op must be run after the model constructed. 
+tf.global \ _variables \ _initializer() 一次初始化所有变量。注意的是，你必须在构建模型后运行此操作。
 脚本如下：
 
 .. code:: python
@@ -103,50 +105,51 @@ tf.global\_variables\_initializer(). This op must be run after the model constru
 证明``tf.global_variables_initializer()``什么都不是
 但是当你在输入参数产生变量时，``tf.variables_initializer`` 
 
-Initialization of a variables using other existing variables
+F
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-New variables can be initialized using other existing variables' initial
-values by taking the values using initialized\_value().
+l
 
-Initialization using predefined variables' values
+
+
+w
 
 .. code:: python
 
-    # Create another variable with the same value as 'weights'.
+提
     WeightsNew = tf.Variable(weights.initialized_value(), name="WeightsNew")
 
-    # Now, the variable must be initialized.
+供
     init_WeightsNew_op = tf.variables_initializer(var_list=[WeightsNew])
 
-As it can be seen from the above script, the ``WeightsNew`` variable is
-initialized with the values of the ``weights`` predefined value.
+的
+图
 
-Running the session
+像
 -------------------
 
-All we did so far was to define the initializers' ops and put them on the
-graph. In order to truly initialize variables, the defined initializers'
-ops must be run in the session. The script is as follows:
+可
+视
+化
 
-Running the session for initialization
+工
 
 .. code:: python
 
-    with tf.Session() as sess:
-        # Run the initializer operation.
+with tf.Session() as sess:
+具
         sess.run(init_all_op)
         sess.run(init_custom_op)
         sess.run(init_WeightsNew_op)
 
-Each of the initializers has been run separated using a session.
+。
 
-Summary
+使
 -------
 
-In this tutorial, we walked through the variable creation and
-initialization. The global, custom and inherited variable initialization
-have been investigated. In the future posts, we investigate how to save
-and restore the variables. Restoring a variable eliminate the necessity
-of its initialization.
+用
+谷
+歌
+的
+话
 

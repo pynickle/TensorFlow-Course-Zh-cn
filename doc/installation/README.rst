@@ -1,38 +1,39 @@
 ==================================
-Install TensorFlow from the source
+
+
 ==================================
 
-.. _TensorFlow: https://www.tensorflow.org/install/
-.. _Installing TensorFlow from Sources: https://www.tensorflow.org/install/install_sources
-.. _Bazel Installation: https://bazel.build/versions/master/docs/install-ubuntu.html
-.. _CUDA Installation: https://github.com/astorfi/CUDA-Installation
-.. _NIDIA documentation: https://github.com/astorfi/CUDA-Installation
+'
+/
+h
+o
+m
 
 
 
-The installation is available at `TensorFlow`_. Installation from the source is recommended because the user can build the desired TensorFlow binary for the specific architecture. It enriches the TensoFlow with a better system compatibility and it will run much faster. Installing from the source is available at `Installing TensorFlow from Sources`_ link. The official TensorFlow explanations are concise and to the point. However. few things might become important as we go through the installation. We try to project the step by step process to avoid any confusion. The following sections must be considered in the written order.
+e
 
-The assumption is that installing TensorFlow in the ``Ubuntu`` using ``GPU support`` is desired. ``Python2.7`` is chosen for installation.
+/
 
-**NOTE** Please refer to this youtube `link <youtube_>`_ for a visual explanation.
+u
 
-.. _youtube: https://www.youtube.com/watch?v=_3JFEPk4qQY&t=2s
+s
 
 ------------------------
-Prepare the environment
+e
 ------------------------
 
-The following should be done in order:
+r
  
-    * TensorFlow Python dependencies installation
-    * Bazel installation
-    * TensorFlow GPU prerequisites setup
+n
+a
+m
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TensorFlow Python Dependencies Installation
+e
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For installation of the required dependencies, the following command must be executed in the terminal:
+/
 
 .. code:: bash
 
@@ -42,12 +43,12 @@ For installation of the required dependencies, the following command must be exe
 The second line is for ``python3`` installation.
 
 ~~~~~~~~~~~~~~~~~~~
-Bazel Installation
+l
 ~~~~~~~~~~~~~~~~~~~
 
-Please refer to `Bazel Installation`_.
+o
 
-``WARNING:`` The Bazel installation may change the supported kernel by the GPU! After that you may need to refresh your GPU installation or update it, otherwise, you may get the following error when evaluating the TensorFlow installation:
+g
 
 .. code:: bash
 
@@ -58,51 +59,51 @@ For solving that error you may need to purge all NVIDIA drivers and install or u
 
     
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TensorFlow GPU Prerequisites Setup
+s
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following requirements must be satisfied:
+'
 
-    * NVIDIA's Cuda Toolkit and its associated drivers(version 8.0 is recommended). The installation is explained at `CUDA Installation`_.
-    * The cuDNN library(version 5.1 is recommended). Please refer to `NIDIA documentation`_ for further details.
-    * Installing the ``libcupti-dev`` using the following command: ``sudo apt-get install libcupti-dev``
+开
+幕
+式
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Creating a Virtual Environment (Optional)
+一
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Assume the installation of TensorFlow in a ``python virtual environment`` is desired. First, we need to create a directory to contain all the environments. It can be done by executing the following in the terminal:
+些
 
 .. code:: bash
 
     sudo mkdir ~/virtualenvs
 
-Now by using the ``virtualenv`` command, the virtual environment can be created:
+语
 
 .. code:: bash
 
     sudo virtualenv --system-site-packages ~/virtualenvs/tensorflow
 
-**Environment Activation**
+句
 
-Up to now, the virtual environment named *tensorflow* has been created. For environment activation, the following must be done:
+可
 
 .. code:: bash
 
     source ~/virtualenvs/tensorflow/bin/activate
 
-However, the command is too verbose! 
+以
 
-**Alias**
+被
 
-The solution is to use an alias to make life easy! Let's execute the following command:
+T
 
 .. code:: bash
 
     echo 'alias tensorflow="source $HOME/virtualenvs/tensorflow/bin/activate" ' >> ~/.bash_aliases
     bash
 
-After running the previous command, please close and open terminal again. Now by running the following simple script, the tensorflow environment will be activated.
+e
 
 .. code:: bash
 
@@ -110,16 +111,16 @@ After running the previous command, please close and open terminal again. Now by
     
 **check the ``~/.bash_aliases``**
 
-To double check let's check the ``~/.bash_aliases`` from the terminal using the ``sudo gedit ~/.bash_aliases`` command. The file should contain the following script:
+n
 
 .. code:: shell
 
     alias tensorflow="source $HO~/virtualenvs/tensorflow/bin/activate" 
     
 
-**check the ``.bashrc``**
+s
 
-Also, let's check the ``.bashrc`` shell script using the ``sudo gedit ~/.bashrc`` command. It should contain the following:
+o
  
 .. code:: shell
 
@@ -133,19 +134,19 @@ Also, let's check the ``.bashrc`` shell script using the ``sudo gedit ~/.bashrc`
 Configuration of the Installation
 ---------------------------------
 
-At first, the Tensorflow repository must be cloned:
+r
 
 .. code:: bash
 
      git clone https://github.com/tensorflow/tensorflow 
 
-After preparing the environment, the installation must be configured. The ``flags`` of the configuration are of great importance because they determine how well and compatible the TensorFlow will be installed!! At first, we have to go to the TensorFlow root:
+F
 
 .. code:: bash
 
     cd tensorflow  # cd to the cloned directory
 
-The flags alongside with the configuration environment are demonstrated below:
+l
 
 .. code:: bash
 
@@ -180,19 +181,22 @@ The flags alongside with the configuration environment are demonstrated below:
     [Default is: "3.5,5.2"]: "5.2"
 
 
-**NOTE:**
-     * The cuDNN version must be exactly determined using the associated files in /usr/local/cuda
-     * The compute capability is spesified related the ``available GPU model`` in the system architecture. For example ``Geforce GTX Titan X`` GPUs have compute capability of 5.2.
-     * Using ``bazel clean`` is recommended if re-configuration is needed.
+o
+w
+定
+义
 
-**WARNING:**
-     * In case installation of the TwnsorFlow in a virtual environment is desired, the environment must be activated at first and before running the ``./configure`` script.
+：
+
+
      
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Test Bazel (Optional)
+
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We can run tests using ``Bazel`` to make sure everything's fine:
+
+
 
 .. code:: bash
 
@@ -200,12 +204,14 @@ We can run tests using ``Bazel`` to make sure everything's fine:
     bazel test ...
 
 ---------------------
-Build the .whl Package
+
+
 ---------------------
 
-After configuration of the setup, the pip package needs to be built by the Bazel.
+
+
     
-To build a TensorFlow package with GPU support, execute the following command:
+#
 
 .. code:: bash
 
@@ -222,16 +228,17 @@ The ``bazel build`` command builds a script named build_pip_package. Running the
 
 
 -------------------------------
-Installation of the Pip Package
+
+
 -------------------------------
 
-Two types of installation can be used. The native installation using system root and the virtual environment installation.
+定
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Native Installation
+义
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following command will install the pip package created by Bazel build:
+一
 
 .. code:: bash
 
@@ -239,10 +246,10 @@ The following command will install the pip package created by Bazel build:
     
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Using Virtual Environments
+些
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At first, the environment must be activation. Since we already defined the environment alias as ``tensorflow``, by the terminal execution of the simple command of ``tensorflow``, the environment will be activated. Then like the previous part, we execute the following:
+语
 
 .. code:: bash
     
@@ -256,7 +263,7 @@ At first, the environment must be activation. Since we already defined the envir
 Validate the Installation
 --------------------------
 
-In the terminal, the following script must be run (``in the home directory``) correctly without any error and preferably any warning:
+句
 
 .. code:: bash
 
@@ -267,20 +274,21 @@ In the terminal, the following script must be run (``in the home directory``) co
     >> print(sess.run(hello))
 
 --------------------------
-Common Errors
+吧
 --------------------------
 
-Different errors reported blocking the compiling and running TensorFlow.
+！
 
-   * ``Mismatch between the supported kernel versions:`` This error mentioned earlier in this documentation. The naive solution reported being the reinstallation of the CUDA driver.
-   * ``ImportError: cannot import name pywrap_tensorflow:`` This error usually occurs when the Python loads the tensorflow libraries from the wrong directory, i.e., not the version installed by the user in the root. The first step is to make sure we are in the system root such that the python libraries are utilized correctly. So basically we can open a new terminal and test TensorFlow installation again. 
-   * ``ImportError: No module named packaging.version":`` Most likely it might be related to the ``pip`` installation. Reinstalling that using ``python -m pip install -U pip`` or ``sudo python -m pip install -U pip`` may fix it!
+运
+行
+
+
 
 --------------------------
-Summary
+使
 --------------------------
 
-In this tutorial, we described how to install TensorFlow from the source which has the advantage of more compatibility with the system configuration. Python virtual environment installation has been investigated as well to separate the TensorFlow environment from other environments. Conda environments can be used as well as Python virtual environments which will be explained in a separated post. In any case, the TensorFlow installed from the source can be run much faster than the pre-build binary packages provided by the TensorFlow although it adds the complexity to installation process.
+验
 
 
 

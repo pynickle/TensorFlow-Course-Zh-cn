@@ -76,7 +76,7 @@ The ``tf.`` operator performs the specific operation and the output will be a ``
 .. code:: python
 
     # 运行会话
-    with tf.Session() as sess:
+with tf.Session() as sess:
         writer = tf.summary.FileWriter(os.path.expanduser(FLAGS.log_dir), sess.graph)
         print("output: ", sess.run([a,b,x,y]))
 
@@ -97,11 +97,12 @@ Results
         [5.0, 10.0, 15.0, 0.5]
 
 
-If we run the Tensorboard using ``tensorboard --logdir="absolute/path/to/log_dir"`` we get the following when visualiaing the ``Graph``:
+如果我们使用 ``tensorboard --logdir=\"absolute/path/to/log_dir\"`` 来运行Tensorboard，我们在可视化 ``图像`` 时会得到如下结果：
 
-.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/1-basics/basic_math_operations/graph-run.png
-   :scale: 30 %
-   :align: center
+
+n
+:scale: 30 %
+:align: center
 
    **图1：** TensorFlow图像
 
