@@ -11,8 +11,8 @@ TensorFlow变量简介：创建，初始化
 其他操作都无法执行。TensorFlow中定义的变量
 只是具有特定形状和类型的张量。所以我们必须使用值来初始化这些张量
 以使其有效。在本教程中，我们
-将解释如何 ``定义`` 和 ``初始化`` 变量。 
-`源
+将解释如何 ``定义`` 和 ``初始化`` 变量。
+ `源
 代码 <https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/variables>`__ 
 可以在GitHub存储库中找到。
 
@@ -20,12 +20,12 @@ TensorFlow变量简介：创建，初始化
 ------------------
 
 对于一个变量的生成，我们将使用 tf.Variable() 类。当
-我们定义一个变量时，我们至少将一个 ``张量`` 和它的 ``值`` 
+当我们定义一个变量时，我们至少将一个 ``张量`` 和它的 ``值``
 传递给图像。正常情况下会发生以下情况：
 
-    - 包含一个值的 ``变量`` 张量将传递给
-      图像。
-    - 通过使用tf.assign，变量初始化器设置初始值。
+    -  包含一个值的 ``变量`` 张量将传递给
+       图像。
+通过使用tf.assign，变量初始化器设置初始值。
 
 一些变量可以像如下定义：
 
@@ -50,7 +50,7 @@ TensorFlow变量简介：创建，初始化
     
 
 在上面的脚本中， ``ops.get_collection`` 
-从定义的图像中获取所有已定义变量的列表。"name"键，为图表上的每个变量
+from the defined graph. The "name" key, define a specific name for each
 定义了一个特定的名称。
 
 初始化
@@ -66,12 +66,12 @@ TensorFlow变量简介：创建，初始化
 初始化特定变量
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-通过使用tf.variables \\ _initializer，我们可以显式命令
+By using tf.variables\_initializer, we can explicitly command the
 TensorFlow仅初始化某个特定的变量。 脚本如下
 
 .. code:: python
      
-    # “variable_list_custom”是我们要初始化的变量列表。
+    # "variable_list_custom" is the list of variables that we want to initialize.
     variable_list_custom = [weights, custom_variable]
 
     # 初始化器
@@ -87,7 +87,7 @@ TensorFlow仅初始化某个特定的变量。 脚本如下
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 你可以使用 
-tf.global \\ _variables \\ _initializer() 一次初始化所有变量。注意的是，你必须在构建模型后运行此操作。
+tf.global\_variables\_initializer(). This op must be run after the model constructed. 
 脚本如下：
 
 .. code:: python
@@ -99,9 +99,9 @@ tf.global \\ _variables \\ _initializer() 一次初始化所有变量。注意�
     # 方法-2
     init_all_op = tf.variables_initializer(var_list=all_variables_list)
 
-Both the above methods are identical. We only provide the second one to
-demonstrate that the ``tf.global_variables_initializer()`` is nothing
-but ``tf.variables_initializer`` when you yield all the variables as the input argument.
+所有以上提供的方法都是相同的，我们只提供第二种来
+证明``tf.global_variables_initializer()``什么都不是
+但是当你在输入参数产生变量时，``tf.variables_initializer`` 
 
 Initialization of a variables using other existing variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
