@@ -4,7 +4,8 @@
 
 [📚TensorFlow-Course](https://github.com/machinelearningmindset/TensorFlow-Course)
 
-![commit id: 44fcda2](https://img.shields.io/badge/commit%20id-44fcda2-blue.svg)
+<img src="https://img.shields.io/badge/commit%20id-44fcda2-blue.svg" 
+     href="https://github.com/machinelearningmindset/TensorFlow-Course/commit/44fcda292f2cc8bb727847351f725cff0bea0601">
 
 ## Issues和Pull Requests
 
